@@ -12,9 +12,66 @@
 // 系统内部UI参数
 #define Screen_Width [UIScreen mainScreen].bounds.size.width
 #define Screen_Height [UIScreen mainScreen].bounds.size.height
+#define TAB_TAB_HEIGHT                  49.0f
 
 //#define LCBtnColor [UIColor colorWithRed:253/255.0 green:139/255.0 blue:8/255.0 alpha:1]
 #define RGBR(a,b,c,d) [UIColor colorWithRed:a/255.0 green:b/255.0 blue:c/255.0 alpha:d]
+
+
+#import "MBProgressHUD.h"
+#import "DownLoadDataSource.h" //数据下载
+#import "Masonry.h" // 适配三方库
+#import "UIImageView+WebCache.h"
+
+/**URL*/
+// 首页（GET)
+#define kMAinPageUrlStr @"http://open.qyer.com/qyer/recommands/index?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1"
+
+// 智能推荐
+#define kAutoCommentUrl @"http://open.qyer.com/qyer/recommands/intelligent?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&track_deviceid=864312020164434"
+
+// 游记加载链接
+#define kTripUrlStr @"http://open.qyer.com/qyer/recommands/trip?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&type=index&page=%d&count=%d"
+
+// 获取国家列表（POST）
+#define kCountryListUrl @"http://open.qyer.com/place/common/get_all_country"
+
+// 国家详情界面
+#define kDtailCountryUrl @"http://open.qyer.com/qyer/footprint/country_detail?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&country_id=%@"
+
+// 城市详情
+#define kCityDetailUrl @"http://open.qyer.com/qyer/footprint/city_detail?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&track_app_channel=360m&track_device_info=HM2013022&city_id=%@"
+
+// 锦囊列表POST
+#define kJinNangListUrl @"http://open.qyer.com/guide/guide/get_guide_all"
+
+// 锦囊主页GET
+#define LCJinNangListUrl @"http://open.qyer.com/guide/guide/get_guide_all?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&track_deviceid=864312020164434&track_app_version=5.2.1&track_app_channel=360m"
+
+// 锦囊详细GET
+#define LCJinNangDetailUrl @"http://open.qyer.com/guide/guide/get_guide_info?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&track_deviceid=864312020164434&track_device_info=HM2013022&app_installtime=1411107832476&guideid=%@"
+
+// 锦囊详细信息POST
+#define kJinNangDetailUrl @"http://open.qyer.com/guide/guide/get_guide_info"
+
+// 主题详情
+#define kSubjectDetailUrl @"http://open.qyer.com/qyer/footprint/mguide_detail?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&app_installtime=1411107832476&id=%@&page=1&count=10&source=TravelTopicDetailActivity"
+
+// lgq加
+// 国家或城市页面的锦囊链接(POST)
+#define kCityPackUrl @"http://open.qyer.com/guide/guide/get_guide_list"
+
+// 国家详情主题推荐(GET)
+#define kCityMguide @"http://open.qyer.com/qyer/footprint/mguide_list?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&track_deviceid=864312020164434&track_app_version=5.2.1&track_app_channel=360m&track_device_info=HM2013022&track_os=Android4.2.1&track_user_id=&app_installtime=1411107832476&lat=40.035727&lon=116.363162&type=%@&id=%@&count=%d&page=%d"
+
+// 国家详情推荐行程(POST)
+#define kRecommendPlanListUrl @"http://open.qyer.com/place/common/get_recommend_plan_list"
+
+// 获取地点详情
+#define kPositionUrl @"http://open.qyer.com/qyer/footprint/poi_detail"
+
+// 获取地点图片
+#define kPositionPhotos @"http://open.qyer.com/poi/get_pic_list"
 
 
 
