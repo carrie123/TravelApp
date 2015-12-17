@@ -17,11 +17,20 @@
 //#define LCBtnColor [UIColor colorWithRed:253/255.0 green:139/255.0 blue:8/255.0 alpha:1]
 #define RGBR(a,b,c,d) [UIColor colorWithRed:a/255.0 green:b/255.0 blue:c/255.0 alpha:d]
 
+// “目的地”页面相关UI参数
+#define CollectionCell_WIDTH     ((Screen_Width - 15*2 - 10)/2.0)
+#define CollectionCell_HEIGHT    (((Screen_Width - 15*2 - 10)/2.0) * 1.4)
+
+#define CollectionView_HEIGHTWith_SingularCount(count)   \
+CollectionCell_HEIGHT*(count/2) + CollectionCell_HEIGHT + 15*2 + 10*(count/2)
+#define CollectionView_HEIGHTWith_DualCount(count)       \
+CollectionCell_HEIGHT*(count/2) + 15*2 + 10*(count/2 - 1)
 
 #import "MBProgressHUD.h"
 #import "DownLoadDataSource.h" //数据下载
 #import "Masonry.h" // 适配三方库
 #import "UIImageView+WebCache.h"
+#import "MagicalRecord.h"
 
 /**URL*/
 // 首页（GET)
