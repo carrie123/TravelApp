@@ -85,8 +85,8 @@ static BOOL isTop = YES; // 判断视图是否在顶部
     if(indexPath.row == 4) // 我的锦囊
     {
         MyPackageViewController * myPackageVC = [[MyPackageViewController alloc] init];
-//        NSArray * allPackageArr = [PackageDB MR_findAll];
-//        myPackageVC.allPackageArr = [NSArray arrayWithArray:allPackageArr];
+        NSArray * allPackageArr = [PackageDB MR_findAll];
+        myPackageVC.allPackageArr = [NSArray arrayWithArray:allPackageArr];
         [self.navigationController pushViewController:myPackageVC animated:YES];
     }
 }

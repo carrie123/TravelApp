@@ -26,11 +26,22 @@ CollectionCell_HEIGHT*(count/2) + CollectionCell_HEIGHT + 15*2 + 10*(count/2)
 #define CollectionView_HEIGHTWith_DualCount(count)       \
 CollectionCell_HEIGHT*(count/2) + 15*2 + 10*(count/2 - 1)
 
+// “锦囊”页面相关UI参数
+#define PackageCollectionCell_WIDTH  ((Screen_Width*0.8 - 10*2 - 10)/2.0)
+#define PackageCollectionCell_HEIGHT (((Screen_Width*0.8 - 10*2 - 10)/2.0) * 1.4)
+
+#define PackageCollectionView_HEIGHTWith_SingularCount(count)   \
+PackageCollectionCell_HEIGHT*(count/2) + PackageCollectionCell_HEIGHT + 10*2 + 10*(count/2)
+#define PackageCollectionView_HEIGHTWith_DualCount(count)       \
+PackageCollectionCell_HEIGHT*(count/2) + 10*2 + 10*(count/2 - 1)
+
+
 #import "MBProgressHUD.h"
 #import "DownLoadDataSource.h" //数据下载
 #import "Masonry.h" // 适配三方库
 #import "UIImageView+WebCache.h"
 #import "MagicalRecord.h"
+#import "MRProgress.h"
 
 /**URL*/
 // 首页（GET)
